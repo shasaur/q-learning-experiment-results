@@ -1,11 +1,20 @@
 import { ResponsiveLine } from '@nivo/line'
 import './graphs.css'
+
+// Data
 import part1data from './experiment1-part1-data.json'
+
 import part2data from './experiment1-part2-data.json'
+
 import part3data5x5 from './experiment1-part3-5x5-data.json'
 import part3data7x7 from './experiment1-part3-7x7-data.json'
 import part3data10x10 from './experiment1-part3-10x10-data.json'
 import part3data15x15 from './experiment1-part3-15x15-data.json'
+
+import part4data5x5 from './experiment1-part4-5x5-data.json'
+import part4data7x7 from './experiment1-part4-7x7-data.json'
+import part4data10x10 from './experiment1-part4-10x10-data.json'
+import part4data15x15 from './experiment1-part4-15x15-data.json'
 
 const Experiment1 = () => (
     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
@@ -176,6 +185,131 @@ const Experiment1 = () => (
                         legend: 'Episodes', 
                         legendOffset: 36,
                         tickValues: [3000, 6000, 9000, 12000, 15000, 18000, 20000],
+                    }}
+                    axisLeft={{ legend: 'Average Steps per Episode', legendOffset: -40 }}
+                    pointSize={0}
+                    pointColor={{ theme: 'background' }}
+                    pointBorderWidth={2}
+                    pointBorderColor={{ from: 'seriesColor' }}
+                    pointLabelYOffset={-12}
+                    enableTouchCrosshair={true}
+                    useMesh={true}
+                    legends={[
+                        {
+                            anchor: 'bottom-right',
+                            direction: 'column',
+                            translateX: 100,
+                            itemWidth: 80,
+                            itemHeight: 22,
+                            symbolShape: 'circle'
+                        }
+                    ]}
+                />
+            </div>
+        </div>
+        <h3>Part 4: Using deep q-learning</h3>
+        <p>Trying out deep q-learning and comparing the performance of against standard tabular q-learning.</p>
+        <p>Commit ID: a4af5cec85fd9cb0c316390392f0c19520b023ae</p>
+        <div style={{flexWrap: 'wrap', width: '80vw', flexDirection: 'row', display: 'flex'}}>
+            <div style={{ width: 500, height: 400, color: 'white' }}>
+                <ResponsiveLine /* or Line for fixed dimensions */
+                    data={part4data5x5}
+                    margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                    yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
+                    axisBottom={{ 
+                        legend: 'Episodes', 
+                        legendOffset: 36,
+                        tickValues: [500, 1000, 1500, 2000, 2500],
+                    }}
+                    axisLeft={{ legend: 'Average Steps per Episode', legendOffset: -40 }}
+                    pointSize={0}
+                    pointColor={{ theme: 'background' }}
+                    pointBorderWidth={2}
+                    pointBorderColor={{ from: 'seriesColor' }}
+                    pointLabelYOffset={-12}
+                    enableTouchCrosshair={true}
+                    useMesh={true}
+                    legends={[
+                        {
+                            anchor: 'bottom-right',
+                            direction: 'column',
+                            translateX: 100,
+                            itemWidth: 80,
+                            itemHeight: 22,
+                            symbolShape: 'circle'
+                        }
+                    ]}
+                />
+            </div>
+            <div style={{ width: 500, height: 400, color: 'white' }}>
+                <ResponsiveLine /* or Line for fixed dimensions */
+                    data={part4data7x7}
+                    margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                    yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
+                    axisBottom={{ 
+                        legend: 'Episodes', 
+                        legendOffset: 36,
+                        tickValues: [500, 1000, 1500, 2000, 2500],
+                    }}
+                    axisLeft={{ legend: 'Average Steps per Episode', legendOffset: -40 }}
+                    pointSize={0}
+                    pointColor={{ theme: 'background' }}
+                    pointBorderWidth={2}
+                    pointBorderColor={{ from: 'seriesColor' }}
+                    pointLabelYOffset={-12}
+                    enableTouchCrosshair={true}
+                    useMesh={true}
+                    legends={[
+                        {
+                            anchor: 'bottom-right',
+                            direction: 'column',
+                            translateX: 100,
+                            itemWidth: 80,
+                            itemHeight: 22,
+                            symbolShape: 'circle'
+                        }
+                    ]}
+                />
+            </div>
+            <div style={{ width: 500, height: 400, color: 'white' }}>
+                <ResponsiveLine /* or Line for fixed dimensions */
+                    data={part4data10x10}
+                    margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                    yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
+                    axisBottom={{ 
+                        legend: 'Episodes', 
+                        legendOffset: 36,
+                        tickValues: [500, 1000, 1500, 2000, 2500],
+                    }}
+                    axisLeft={{ legend: 'Average Steps per Episode', legendOffset: -40 }}
+                    pointSize={0}
+                    pointColor={{ theme: 'background' }}
+                    pointBorderWidth={2}
+                    pointBorderColor={{ from: 'seriesColor' }}
+                    pointLabelYOffset={-12}
+                    enableTouchCrosshair={true}
+                    useMesh={true}
+                    legends={[
+                        {
+                            anchor: 'bottom-right',
+                            direction: 'column',
+                            translateX: 100,
+                            itemWidth: 80,
+                            itemHeight: 22,
+                            symbolShape: 'circle'
+                        }
+                    ]}
+                />
+            </div>
+            <div style={{ width: 500, height: 400, color: 'white' }}>
+                <ResponsiveLine /* or Line for fixed dimensions */
+                    data={part4data15x15}
+                    margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                    yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
+                    axisBottom={{ 
+                        legend: 'Episodes', 
+                        legendOffset: 36,
+                        tickValues: [500, 1000, 1500, 2000, 2500],
                     }}
                     axisLeft={{ legend: 'Average Steps per Episode', legendOffset: -40 }}
                     pointSize={0}
