@@ -1,0 +1,11 @@
+text {
+    fill: white !important;
+}
+
+line {
+    stroke: black !important;
+}
+
+div {
+    background-color: transparent !important;
+}
