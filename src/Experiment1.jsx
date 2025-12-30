@@ -1,5 +1,7 @@
 import { ResponsiveLine } from '@nivo/line'
 import './graphs.css'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 // Data
 import part1data from './experiment1-part1-data.json'
@@ -20,6 +22,9 @@ const Experiment1 = () => (
     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <h2>Experiment 1</h2>
         <p>A simple experiment for an agent to learn to navigate to food in a map.</p>
+        <SyntaxHighlighter language="python" style={oneDark} customStyle={{fontSize: '14px', margin: '10px 0'}}>
+q_table[state, action] = q_table[state, action] + alpha * (reward - q_table[state, action])
+        </SyntaxHighlighter>
         <h3>Part 1: Variation in learning with the same hyperparameters</h3>
         <div style={{ width: 500, height: 400, color: 'white' }}>
             <ResponsiveLine /* or Line for fixed dimensions */
