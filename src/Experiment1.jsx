@@ -403,7 +403,7 @@ const Experiment1 = () => (
                 ]}
             />
         </div>
-
+        <p>Then at 64 neurons with various layers:</p>
         <div style={{ width: 370, height: 400, color: 'white' }}>
             <ResponsiveLine /* or Line for fixed dimensions */
                 data={part6data}
