@@ -611,6 +611,10 @@ const App = () => {
         key, and then get to the door.
       </p>
       <img src={experimentGetKeyThenDoorGif} alt="Experiment 3.2" />
+      {/* Footer */}
+      <footer style={{ marginTop: "50px" }}>
+        <i>Tomas Piga, 2025</i>
+      </footer>
     </div>
   );
 };
