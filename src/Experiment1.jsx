@@ -3,6 +3,8 @@ import './graphs.css'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
+import IconGrid from './IconGrid'
+
 // Assets
 import experimentGetFoodGif from './assets/experiment_get-food.gif'
 import experimentGetKeyThenDoorGif from './assets/experiment_get-key-and-then-door.gif'
@@ -29,30 +31,13 @@ import part6data from './experiment1-part6-data.json'
 const equation1 = `target = reward + gamma * np.max(q_table[next_state])
 q_table[state, action] = q_table[state, action] + alpha * (target - q_table[state, action])`
 
-const Experiment1 = () => (
-    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-        <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 50px)',
-            gridTemplateRows: 'repeat(3, 50px)',
-            gap: '2px',
-            marginBottom: '20px'
-        }}>
-            {Array.from({length: 9}, (_, index) => {
-                const row = Math.floor(index / 3);
-                const col = index % 3;
-                const isBlack = (row + col) % 2 === 0;
-                return (
-                    <div key={index} style={{
-                        backgroundColor: isBlack ? '#000' : '#666',
-                        border: '1px solid #333'
-                    }} />
-                );
-            })}
-        </div>
+const Experiment1 = () => {
+    return (
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <IconGrid />
         <h2>Experiment 1 - Basic Q-Learning</h2>
         <p>A simple experiment for an agent to learn to navigate to food in a map.</p>
-        <SyntaxHighlighter language="python" style={oneDark} customStyle={{fontSize: '14px', margin: '10px 0'}}>
+        <SyntaxHighlighter language="python" style={oneDark} customStyle={{fontSize: '14px', margin: '10px 0', maxWidth: '100%'}}>
             {equation1}
         </SyntaxHighlighter>
         <ul>
@@ -63,6 +48,7 @@ const Experiment1 = () => (
                 Our reward is not only what we receive at which step, but also the new rewards taking that step will unlock (i.e. what the new actions in that state will give as a reward)
             </li>
         </ul>
+        <img src={experimentGetFoodGif} alt="Experiment 1" />
         <h3>Part 1.1: Variation in learning with the same hyperparameters</h3>
         <div style={{ width: 370, height: 400, color: 'white' }}>
             <ResponsiveLine /* or Line for fixed dimensions */
@@ -466,13 +452,14 @@ const Experiment1 = () => (
             Both higher number of neurons and more layers improve performance. However, after a certain point, these networks become unreliable, which in my guess, would be due to overfitting.
         </p>
         <h2>Experiment 3: Variations in goals</h2>
-        <h3>Part 3.1: Getting treasure</h3>
-        <img src={experimentGetFoodGif} alt="Experiment 3.1" />
-        <h3>Part 3.2: Chasing treasure</h3>
-        <img src={experimentChaseFoodGif} alt="Experiment 3.2" />
-        <h3>Part 3.3: Getting key and then door</h3>
-        <img src={experimentGetKeyThenDoorGif} alt="Experiment 3.3" />
+        <h3>Part 3.1: Treasure on legs</h3>
+        <p>Variation on the original task where the treasure moves every 2 turns. This is to test whether the agent can react to changes in the environment.</p>
+        <img src={experimentChaseFoodGif} alt="Experiment 3.1" />
+        <h3>Part 3.2: First, finding the key</h3>
+        <p>Variation on the original task where the agent must first pick up the key, and then get to the door.</p>
+        <img src={experimentGetKeyThenDoorGif} alt="Experiment 3.2" />
     </div>
 )
+}
 
 export default Experiment1;

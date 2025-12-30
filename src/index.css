@@ -80,3 +80,7 @@ html {
   padding: 5vw;
   max-width: calc(90vw);
 }
+
+img {
+  max-width: 100%;
+}
