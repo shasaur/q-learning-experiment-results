@@ -40,10 +40,10 @@ const Experiment1 = () => (
             </li>
         </ul>
         <h3>Part 1.1: Variation in learning with the same hyperparameters</h3>
-        <div style={{ width: 500, height: 400, color: 'white' }}>
+        <div style={{ width: 370, height: 400, color: 'white' }}>
             <ResponsiveLine /* or Line for fixed dimensions */
                 data={part1data}
-                margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
                 yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
                 axisBottom={{ 
                     legend: 'Episodes', 
@@ -60,9 +60,10 @@ const Experiment1 = () => (
                 useMesh={true}
                 legends={[
                     {
-                        anchor: 'bottom-right',
+                        // Inside the graph in its top right corner
+                        anchor: 'top-right',
                         direction: 'column',
-                        translateX: 100,
+                        translateX: 0,
                         itemWidth: 80,
                         itemHeight: 22,
                         symbolShape: 'circle'
@@ -71,10 +72,10 @@ const Experiment1 = () => (
             />
         </div>
         <h3>Part 1.2: Averaging 10 runs for more consistent comparisons</h3>
-        <div style={{ width: 500, height: 400, color: 'white' }}>
+        <div style={{ width: 370, height: 400, color: 'white' }}>
             <ResponsiveLine /* or Line for fixed dimensions */
                 data={part2data}
-                margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
                 yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
                 axisBottom={{ 
                     legend: 'Episodes', 
@@ -91,9 +92,9 @@ const Experiment1 = () => (
                 useMesh={true}
                 legends={[
                     {
-                        anchor: 'bottom-right',
+                        anchor: 'top-right',
                         direction: 'column',
-                        translateX: 100,
+                        translateX: 0,
                         itemWidth: 80,
                         itemHeight: 22,
                         symbolShape: 'circle'
@@ -104,11 +105,11 @@ const Experiment1 = () => (
         <h3>Part 1.3: Scaling the difficulty of the task</h3>
         <p>Trying different grid sizes to see how it affects learning. 5x5, 7x7, 10x10, 15x15</p>
         <div
-        style={{flexWrap: 'wrap', width: '80vw', flexDirection: 'row', display: 'flex'}}>
-            <div style={{ width: 500, height: 400, color: 'white' }}>
+        style={{flexWrap: 'wrap', width: '80vw', flexDirection: 'row', display: 'flex', justifyContent: 'center'}}>
+            <div style={{ width: 370, height: 400, color: 'white' }}>
                 <ResponsiveLine /* or Line for fixed dimensions */
                     data={part3data5x5}
-                    margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                    margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
                     yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
                     axisBottom={{ 
                         legend: 'Episodes', 
@@ -125,9 +126,9 @@ const Experiment1 = () => (
                     useMesh={true}
                     legends={[
                         {
-                            anchor: 'bottom-right',
+                            anchor: 'top-right',
                             direction: 'column',
-                            translateX: 100,
+                            translateX: 0,
                             itemWidth: 80,
                             itemHeight: 22,
                             symbolShape: 'circle'
@@ -135,10 +136,10 @@ const Experiment1 = () => (
                     ]}
                 />
             </div>
-            <div style={{ width: 500, height: 400, color: 'white' }}>
+            <div style={{ width: 370, height: 400, color: 'white' }}>
                 <ResponsiveLine /* or Line for fixed dimensions */
                     data={part3data7x7}
-                    margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                    margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
                     yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
                     axisBottom={{ 
                         legend: 'Episodes', 
@@ -155,9 +156,9 @@ const Experiment1 = () => (
                     useMesh={true}
                     legends={[
                         {
-                            anchor: 'bottom-right',
+                            anchor: 'top-right',
                             direction: 'column',
-                            translateX: 100,
+                            translateX: 0,
                             itemWidth: 80,
                             itemHeight: 22,
                             symbolShape: 'circle'
@@ -165,10 +166,10 @@ const Experiment1 = () => (
                     ]}
                 />
             </div>
-            <div style={{ width: 500, height: 400, color: 'white' }}>
+            <div style={{ width: 370, height: 400, color: 'white' }}>
                 <ResponsiveLine /* or Line for fixed dimensions */
                     data={part3data10x10}
-                    margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                    margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
                     yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
                     axisBottom={{ 
                         legend: 'Episodes', 
@@ -185,9 +186,9 @@ const Experiment1 = () => (
                     useMesh={true}
                     legends={[
                         {
-                            anchor: 'bottom-right',
+                            anchor: 'top-right',
                             direction: 'column',
-                            translateX: 100,
+                            translateX: 0,
                             itemWidth: 80,
                             itemHeight: 22,
                             symbolShape: 'circle'
@@ -195,10 +196,10 @@ const Experiment1 = () => (
                     ]}
                 />
             </div>
-            <div style={{ width: 500, height: 400, color: 'white' }}>
+            <div style={{ width: 370, height: 400, color: 'white' }}>
                 <ResponsiveLine /* or Line for fixed dimensions */
                     data={part3data15x15}
-                    margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                    margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
                     yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
                     axisBottom={{ 
                         legend: 'Episodes', 
@@ -215,9 +216,9 @@ const Experiment1 = () => (
                     useMesh={true}
                     legends={[
                         {
-                            anchor: 'bottom-right',
+                            anchor: 'top-right',
                             direction: 'column',
-                            translateX: 100,
+                            translateX: 0,
                             itemWidth: 80,
                             itemHeight: 22,
                             symbolShape: 'circle'
@@ -247,11 +248,11 @@ const Experiment1 = () => (
         <p>Grid sizes: 5x5, 7x7, 10x10, 15x15</p>
         <p>Number of layers: 3. Number of neurons in the hidden layer: 128.</p>
         <p>Commit ID: a4af5cec85fd9cb0c316390392f0c19520b023ae</p>
-        <div style={{flexWrap: 'wrap', width: '80vw', flexDirection: 'row', display: 'flex'}}>
-            <div style={{ width: 500, height: 400, color: 'white' }}>
+        <div style={{flexWrap: 'wrap', width: '80vw', flexDirection: 'row', display: 'flex', justifyContent: 'center'}}>
+            <div style={{ width: 370, height: 400, color: 'white' }}>
                 <ResponsiveLine /* or Line for fixed dimensions */
                     data={part4data5x5}
-                    margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                    margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
                     yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
                     axisBottom={{ 
                         legend: 'Episodes', 
@@ -268,9 +269,9 @@ const Experiment1 = () => (
                     useMesh={true}
                     legends={[
                         {
-                            anchor: 'bottom-right',
+                            anchor: 'top-right',
                             direction: 'column',
-                            translateX: 100,
+                            translateX: 0,
                             itemWidth: 80,
                             itemHeight: 22,
                             symbolShape: 'circle'
@@ -278,10 +279,10 @@ const Experiment1 = () => (
                     ]}
                 />
             </div>
-            <div style={{ width: 500, height: 400, color: 'white' }}>
+            <div style={{ width: 370, height: 400, color: 'white' }}>
                 <ResponsiveLine /* or Line for fixed dimensions */
                     data={part4data7x7}
-                    margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                    margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
                     yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
                     axisBottom={{ 
                         legend: 'Episodes', 
@@ -298,9 +299,9 @@ const Experiment1 = () => (
                     useMesh={true}
                     legends={[
                         {
-                            anchor: 'bottom-right',
+                            anchor: 'top-right',
                             direction: 'column',
-                            translateX: 100,
+                            translateX: 0,
                             itemWidth: 80,
                             itemHeight: 22,
                             symbolShape: 'circle'
@@ -308,10 +309,10 @@ const Experiment1 = () => (
                     ]}
                 />
             </div>
-            <div style={{ width: 500, height: 400, color: 'white' }}>
+            <div style={{ width: 370, height: 400, color: 'white' }}>
                 <ResponsiveLine /* or Line for fixed dimensions */
                     data={part4data10x10}
-                    margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                    margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
                     yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
                     axisBottom={{ 
                         legend: 'Episodes', 
@@ -328,9 +329,9 @@ const Experiment1 = () => (
                     useMesh={true}
                     legends={[
                         {
-                            anchor: 'bottom-right',
+                            anchor: 'top-right',
                             direction: 'column',
-                            translateX: 100,
+                            translateX: 0,
                             itemWidth: 80,
                             itemHeight: 22,
                             symbolShape: 'circle'
@@ -338,10 +339,10 @@ const Experiment1 = () => (
                     ]}
                 />
             </div>
-            <div style={{ width: 500, height: 400, color: 'white' }}>
+            <div style={{ width: 370, height: 400, color: 'white' }}>
                 <ResponsiveLine /* or Line for fixed dimensions */
                     data={part4data15x15}
-                    margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                    margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
                     yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
                     axisBottom={{ 
                         legend: 'Episodes', 
@@ -358,9 +359,9 @@ const Experiment1 = () => (
                     useMesh={true}
                     legends={[
                         {
-                            anchor: 'bottom-right',
+                            anchor: 'top-right',
                             direction: 'column',
-                            translateX: 100,
+                            translateX: 0,
                             itemWidth: 80,
                             itemHeight: 22,
                             symbolShape: 'circle'
@@ -372,10 +373,10 @@ const Experiment1 = () => (
 
         <h3>Part 2.2: Varying the number of layers and neurons in the hidden layer</h3>
         <p>Grid size: 10x10. Hidden layers: 1.</p>
-        <div style={{ width: 500, height: 400, color: 'white' }}>
+        <div style={{ width: 370, height: 400, color: 'white' }}>
             <ResponsiveLine /* or Line for fixed dimensions */
                 data={part5data}
-                margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
                 yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
                 axisBottom={{ 
                     legend: 'Episodes', 
@@ -392,9 +393,9 @@ const Experiment1 = () => (
                 useMesh={true}
                 legends={[
                     {
-                        anchor: 'bottom-right',
+                        anchor: 'top-right',
                         direction: 'column',
-                        translateX: 100,
+                        translateX: 0,
                         itemWidth: 80,
                         itemHeight: 22,
                         symbolShape: 'circle'
@@ -403,10 +404,10 @@ const Experiment1 = () => (
             />
         </div>
 
-        <div style={{ width: 500, height: 400, color: 'white' }}>
+        <div style={{ width: 370, height: 400, color: 'white' }}>
             <ResponsiveLine /* or Line for fixed dimensions */
                 data={part6data}
-                margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
                 yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
                 axisBottom={{ 
                     legend: 'Episodes', 
@@ -423,9 +424,9 @@ const Experiment1 = () => (
                 useMesh={true}
                 legends={[
                     {
-                        anchor: 'bottom-right',
+                        anchor: 'top-right',
                         direction: 'column',
-                        translateX: 100,
+                        translateX: 0,
                         itemWidth: 80,
                         itemHeight: 22,
                         symbolShape: 'circle'

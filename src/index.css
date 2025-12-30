@@ -75,3 +75,8 @@ ul {
   max-width: 800px;
   text-align: left;
 }
+
+html {
+  padding: 5vw;
+  max-width: calc(90vw);
+}
