@@ -11,6 +11,9 @@ import "./graphs.css";
 import experimentGetFoodGif from "./assets/experiment_get-food.gif";
 import experimentGetKeyThenDoorGif from "./assets/experiment_get-key-and-then-door.gif";
 import experimentChaseFoodGif from "./assets/experiment_chase-food.gif";
+import experimentPushKeyToDoorGif from "./assets/experiment_get-push-key.gif";
+import experimentPushKeyToDoorGif2 from "./assets/experiment_get-push-key-2.gif";
+import experimentPushKeyToDoorGif3 from "./assets/experiment_get-push-key-3.gif";
 
 // Data
 import part1data from "./experiment1-part1-data.json";
@@ -29,6 +32,8 @@ import part4data15x15 from "./experiment1-part4-15x15-data.json";
 
 import part5data from "./experiment1-part5-data.json";
 import part6data from "./experiment1-part6-data.json";
+import part7data from "./experiment1-part7-data.json";
+import part8data from "./experiment1-part8-data.json";
 
 const snippet1 = `target = reward + gamma * np.max(q_table[next_state])
 q_table[state, action] = q_table[state, action] + alpha * (target - q_table[state, action])`;
@@ -611,6 +616,97 @@ const App = () => {
         key, and then get to the door.
       </p>
       <img src={experimentGetKeyThenDoorGif} alt="Experiment 3.2" />
+      <h3>3.3. Pushing the key</h3>
+      <p>
+        Variation on the original task where the agent must push the key to the
+        door.
+      </p>
+      <img src={experimentPushKeyToDoorGif} alt="Experiment 3.3" />
+      <p>
+        This proved to be a significant challenge for the agent. Many tries were
+        unsuccessful, and success did not improve with more training.
+      </p>
+      <p>
+        It is however interesting to note, that the agent has correctly picked
+        up a fear of pushing the key against the wall - a configuration he can
+        never recover from.
+      </p>
+      <div style={{ width: 370, height: 400, color: "white" }}>
+        <ResponsiveLine /* or Line for fixed dimensions */
+          data={part7data}
+          margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
+          yScale={{ type: "linear", min: "auto", max: "auto", reverse: false }}
+          axisBottom={{
+            legend: "Episodes",
+            legendOffset: 36,
+            tickValues: [500, 1000, 1500, 2000, 2500],
+          }}
+          axisLeft={{ legend: "Average Steps per Episode", legendOffset: -40 }}
+          pointSize={0}
+          pointColor={{ theme: "background" }}
+          pointBorderWidth={2}
+          pointBorderColor={{ from: "seriesColor" }}
+          pointLabelYOffset={-12}
+          enableTouchCrosshair={true}
+          useMesh={true}
+          legends={[
+            {
+              anchor: "top-right",
+              direction: "column",
+              translateX: 0,
+              itemWidth: 80,
+              itemHeight: 22,
+              symbolShape: "circle",
+            },
+          ]}
+        />
+      </div>
+      <p>
+        I made a few changes to improve and speed-up learning. I reduced the max
+        turn rate to 50 in this 5x5 grid (as opposed to the previous 500), this
+        significantly sped up learning. I also doubled the number of layers, and
+        let the agent learn for longer.
+      </p>
+      <p>After 5000 episodes:</p>
+      <img src={experimentPushKeyToDoorGif2} alt="Experiment 3.3" />
+      <p>After 7500 episodes:</p>
+      <img src={experimentPushKeyToDoorGif3} alt="Experiment 3.3" />
+      <p>
+        This seems to have allowed the agent to attain a higher proficiency,
+        yet, it was still unable to become a master.
+      </p>
+      <div style={{ width: 370, height: 400, color: "white" }}>
+        <ResponsiveLine /* or Line for fixed dimensions */
+          data={part8data}
+          margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
+          yScale={{ type: "linear", min: 15, max: "auto", reverse: false }}
+          axisBottom={{
+            legend: "Episodes",
+            legendOffset: 36,
+            tickValues: [3000, 6000, 9000, 12000, 15000],
+            format: (value) => `${Math.floor(value / 1000)}k`,
+          }}
+          axisLeft={{ legend: "Average Steps per Episode", legendOffset: -40 }}
+          pointSize={0}
+          pointColor={{ theme: "background" }}
+          pointBorderWidth={2}
+          pointBorderColor={{ from: "seriesColor" }}
+          pointLabelYOffset={-12}
+          enableTouchCrosshair={true}
+          useMesh={true}
+          legends={[
+            {
+              anchor: "top-right",
+              direction: "column",
+              translateX: -60,
+              itemWidth: 80,
+              itemHeight: 22,
+              symbolShape: "circle",
+            },
+          ]}
+        />
+      </div>
+
       {/* Footer */}
       <footer style={{ marginTop: "50px" }}>
         <i>Tomas Piga, 2025</i>
